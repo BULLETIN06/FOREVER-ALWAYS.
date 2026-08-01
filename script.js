@@ -263,5 +263,38 @@ setTimeout(()=>{
 spark.remove();
 
 },5000);
+/* ======================================
+FINAL FADE
+====================================== */
+
+function showFinalScene(){
+
+const final=document.getElementById("lastScene");
+
+final.style.opacity=1;
+
+// Fade music gently
+
+const fade=setInterval(()=>{
+
+if(music.volume>0.02){
+
+music.volume-=0.02;
+
+}else{
+
+music.pause();
+
+clearInterval(fade);
+
+}
+
+},250);
+
+}
+
+// Show after credits finish
+
+setTimeout(showFinalScene,150000);   
 
 },300);
