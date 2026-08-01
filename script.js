@@ -129,3 +129,116 @@ setTimeout(()=>{
     setInterval(showScene,9000);
 
 },10000);
+/* ==============================
+TYPEWRITER
+============================== */
+
+const finalMessage =
+
+`Love is not measured by expensive gifts.
+
+It is measured by care.
+
+By loyalty.
+
+By trust.
+
+By staying.
+
+Happy Girlfriend's Day.
+
+May your smile always shine brighter than the stars above.
+
+❤️`;
+
+function showTypewriter(){
+
+const box=document.getElementById("typewriter");
+
+const container=document.getElementById("typewriterContainer");
+
+container.style.opacity=1;
+
+let i=0;
+
+function write(){
+
+if(i<finalMessage.length){
+
+box.innerHTML+=finalMessage.charAt(i);
+
+i++;
+
+setTimeout(write,45);
+
+}
+
+}
+
+write();
+
+}
+
+/* ==============================
+ROSE PETALS
+============================== */
+
+setInterval(()=>{
+
+const rose=document.createElement("div");
+
+rose.className="rose";
+
+rose.innerHTML="🌹";
+
+rose.style.left=Math.random()*100+"vw";
+
+rose.style.animationDuration=(5+Math.random()*4)+"s";
+
+document.body.appendChild(rose);
+
+setTimeout(()=>{
+
+rose.remove();
+
+},9000);
+
+},500);
+
+/* ==============================
+SHOOTING STARS
+============================== */
+
+setInterval(()=>{
+
+const star=document.createElement("div");
+
+star.className="shooting";
+
+document.body.appendChild(star);
+
+setTimeout(()=>{
+
+star.remove();
+
+},2000);
+
+},12000);
+
+/* ==============================
+ENDING TIMELINE
+============================== */
+
+setTimeout(()=>{
+
+showTypewriter();
+
+},85000);
+
+setTimeout(()=>{
+
+document.getElementById("credits").style.opacity=1;
+
+document.querySelector(".creditContent").classList.add("creditScroll");
+
+},105000);
