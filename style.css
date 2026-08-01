@@ -337,3 +337,210 @@ opacity:0;
 }
 
 }
+/* ==================================
+TYPEWRITER
+================================== */
+
+#typewriterContainer{
+
+position:fixed;
+
+inset:0;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(0,0,0,.9);
+
+opacity:0;
+
+transition:2s;
+
+pointer-events:none;
+
+z-index:20;
+
+}
+
+#typewriter{
+
+width:80%;
+
+max-width:900px;
+
+font-size:30px;
+
+line-height:2;
+
+text-align:center;
+
+color:white;
+
+}
+
+/* ==================================
+ROSE PETALS
+================================== */
+
+.rose{
+
+position:fixed;
+
+top:-50px;
+
+font-size:30px;
+
+pointer-events:none;
+
+animation:roseFall linear forwards;
+
+z-index:5;
+
+}
+
+@keyframes roseFall{
+
+0%{
+
+transform:translateY(-50px) rotate(0deg);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(110vh) rotate(720deg);
+
+opacity:0;
+
+}
+
+}
+
+/* ==================================
+SHOOTING STAR
+================================== */
+
+.shooting{
+
+position:fixed;
+
+width:150px;
+
+height:2px;
+
+background:white;
+
+box-shadow:0 0 20px white;
+
+transform:rotate(-35deg);
+
+animation:shoot 2s linear forwards;
+
+}
+
+@keyframes shoot{
+
+from{
+
+top:0;
+
+left:110%;
+
+opacity:1;
+
+}
+
+to{
+
+top:80%;
+
+left:-20%;
+
+opacity:0;
+
+}
+
+}
+
+/* ==================================
+FIREWORKS
+================================== */
+
+#fireworks{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+z-index:40;
+
+}
+
+/* ==================================
+MOVIE CREDITS
+================================== */
+
+#credits{
+
+position:fixed;
+
+inset:0;
+
+background:black;
+
+display:flex;
+
+justify-content:center;
+
+align-items:flex-end;
+
+overflow:hidden;
+
+opacity:0;
+
+z-index:50;
+
+}
+
+.creditContent{
+
+width:100%;
+
+text-align:center;
+
+font-size:30px;
+
+padding-bottom:100px;
+
+transform:translateY(100%);
+
+}
+
+.creditScroll{
+
+animation:credits 40s linear forwards;
+
+}
+
+@keyframes credits{
+
+from{
+
+transform:translateY(100%);
+
+}
+
+to{
+
+transform:translateY(-130%);
+
+}
+
+}
