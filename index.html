@@ -5,32 +5,47 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>Forever & Always</title>
+<title>Forever & Always | A Romantic Film</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<!-- Background -->
+<!-- Loading Screen -->
+
+<div id="loading">
+
+<div class="loader"></div>
+
+<h2>Loading Your Love Story...</h2>
+
+</div>
+
+<!-- Animated Background -->
+
+<div id="sky"></div>
+
+<div id="moon"></div>
 
 <div id="stars"></div>
 
+<div id="hearts"></div>
+
+<div id="petals"></div>
+
 <div id="overlay"></div>
 
-<!-- Background Music -->
+<!-- Music -->
 
 <audio id="music" loop>
 
-<source
-src="music/romantic-piano.mp3"
-type="audio/mpeg">
+<source src="music/romantic-piano.mp3" type="audio/mpeg">
 
 </audio>
 
@@ -38,100 +53,76 @@ type="audio/mpeg">
 
 <section id="intro">
 
-<h2>PRESENTS</h2>
+<h3>ENGINEER NERRICK PRESENTS</h3>
 
 <h1>FOREVER & ALWAYS</h1>
 
-<p>A Romantic Short Film</p>
+<h2>A Romantic Short Film</h2>
 
-<h3>Written & Directed by</h3>
+<p>
 
-<h4>Engineer Nerrick</h4>
+Every great love story begins with a single moment...
 
-</section>
-
-<!-- Story -->
-
-<section id="movie">
-
-<h1 id="title"></h1>
-
-<p id="story"></p>
+</p>
 
 </section>
 
-<!-- Ending -->
+<!-- Story Screen -->
+
+<section id="storySection">
+
+<h1 id="sceneTitle"></h1>
+
+<p id="sceneText"></p>
+
+</section>
+
+<!-- Final Message -->
 
 <section id="ending">
 
 <h1>Happy Girlfriend's Day ❤️</h1>
 
-<p>
-
-Some stories never truly end...
-
-They simply continue in the hearts of those who cherish them.
-
-</p>
-
-<h2>❤️ THE END ❤️</h2>
+<p id="endingText"></p>
 
 </section>
 
-<script src="script.js"></script>
-<!-- Movie Effects -->
+<!-- Credits -->
 
-<div id="typewriterContainer">
+<section id="credits">
 
-    <div id="typewriter"></div>
-
-</div>
-
-<canvas id="fireworks"></canvas>
-
-<div id="credits">
-
-<div class="creditContent">
+<div id="creditsContent">
 
 <h1>FOREVER & ALWAYS</h1>
 
+<h2>A Romantic Film</h2>
+
 <br>
-
-<h2>A Romantic Short Film</h2>
-
-<br><br>
 
 <p>Written & Directed by</p>
 
 <h3>Engineer Nerrick</h3>
 
-<br><br>
+<br>
 
-<p>Produced With Love</p>
+<p>
+
+Love is one of life's greatest gifts.
+
+Thank you for watching.
+
+</p>
 
 <br>
 
-<p>Special Thanks</p>
-
-<p>To Everyone Celebrating Love</p>
-
-<br><br>
-
-<h2>Happy Girlfriend's Day ❤️</h2>
-
-<br><br>
-
-<p>Some stories never end...</p>
-
-<p>They simply continue in our hearts.</p>
-
-<br><br>
-
-<h1>❤️ THE END ❤️</h1>
+<h2>❤️ THE END ❤️</h2>
 
 </div>
 
-</div>
+</section>
+
+<script src="script.js"></script>
+
 </body>
 
 </html>
