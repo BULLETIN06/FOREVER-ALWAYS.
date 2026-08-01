@@ -640,3 +640,98 @@ transform:translateY(-80px);
 
 }
 }
+/* ======================================
+FINAL SCENE
+====================================== */
+
+#lastScene{
+
+position:fixed;
+
+inset:0;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+background:radial-gradient(circle,#091120,#000);
+
+opacity:0;
+
+transition:3s;
+
+z-index:100;
+
+text-align:center;
+
+padding:40px;
+
+}
+
+#lastScene h1{
+
+font-family:'Cinzel';
+
+font-size:80px;
+
+color:#FFD700;
+
+margin-bottom:20px;
+
+text-shadow:0 0 30px gold;
+
+}
+
+#lastScene h2{
+
+font-size:40px;
+
+margin-bottom:30px;
+
+color:#ff5f8f;
+
+}
+
+#lastScene p{
+
+font-size:26px;
+
+max-width:850px;
+
+line-height:2;
+
+}
+
+.heartGlow{
+
+font-size:130px;
+
+color:#ff4d6d;
+
+margin-bottom:40px;
+
+animation:pulse 2s infinite;
+
+filter:drop-shadow(0 0 30px #ff4d6d);
+
+}
+
+@keyframes pulse{
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.2);
+
+}
+
+}
