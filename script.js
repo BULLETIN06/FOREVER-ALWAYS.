@@ -1,124 +1,127 @@
-/* ===========================================
+/* ==========================================
    FOREVER & ALWAYS
-   A Romantic Film
    Written & Directed by Engineer Nerrick
-=========================================== */
+========================================== */
 
-// Background Music
+// ---------- MUSIC ----------
+
 const music = document.getElementById("music");
 
-// Most browsers require a user interaction before playing audio
 document.body.addEventListener("click", () => {
+    music.volume = 0.15;
     music.play().catch(() => {});
 }, { once: true });
 
-/* ===========================================
-   FLOATING HEARTS
-=========================================== */
 
-function createHeart(){
-
-    const heart = document.createElement("div");
-
-    heart.className = "heart";
-
-    heart.innerHTML = "❤";
-
-    heart.style.left = Math.random()*100 + "vw";
-
-    heart.style.fontSize = (20 + Math.random()*25) + "px";
-
-    heart.style.animationDuration = (6 + Math.random()*5) + "s";
-
-    document.body.appendChild(heart);
-
-    setTimeout(()=>{
-        heart.remove();
-    },11000);
-
-}
-
-setInterval(createHeart,500);
-
-/* ===========================================
-   MOVIE STORY
-=========================================== */
+// ---------- STORY ----------
 
 const scenes = [
 
 {
-title:"Every Great Story Begins...",
-text:"Some people walk into our lives unexpectedly. At first, they seem like just another person. But somehow, without realizing it, they become someone we never want to lose."
+title:"Prologue",
+text:"Every unforgettable story begins quietly. No fireworks. No grand announcement. Just one unexpected moment that changes everything."
+},
+
+{
+title:"A Simple Hello",
+text:"Sometimes one conversation becomes the beginning of memories that last much longer than either person ever imagined."
 },
 
 {
 title:"The Little Things",
-text:"Love isn't always about grand gestures. Sometimes it's found in a simple good morning, a late-night conversation, a shared laugh, or someone asking if you've eaten today."
+text:"The best moments are often the smallest ones: a smile, a kind word, a laugh that arrives at exactly the right time."
 },
 
 {
-title:"The Smile",
-text:"There is something magical about seeing someone smile because of you. It reminds you that happiness can be created in the smallest moments."
+title:"Growing Closer",
+text:"Without realizing it, ordinary days slowly become extraordinary because someone special becomes part of them."
 },
 
 {
-title:"A Safe Place",
-text:"The right person doesn't just make your heart race... they make your heart feel at home. They become your comfort during difficult days and your peace during quiet nights."
+title:"Trust",
+text:"Real love grows through patience, understanding, kindness, and choosing to care even on ordinary days."
 },
 
 {
-title:"Time",
-text:"The most precious gift anyone can give isn't money or expensive presents. It's time. Because time is something we can never get back."
+title:"Memories",
+text:"Some moments become photographs. Others become permanent memories inside the heart."
 },
 
 {
-title:"Appreciation",
-text:"Thank you for every conversation, every laugh, every memory, and every little moment that made ordinary days feel extraordinary."
+title:"Distance",
+text:"Even when people aren't standing side by side, appreciation and genuine care can still remain close."
+},
+
+{
+title:"Gratitude",
+text:"Thank you for every smile, every conversation, every laugh, and every moment that made life feel a little brighter."
 },
 
 {
 title:"Today",
-text:"Today isn't just another day. It's a reminder to celebrate someone who brings joy, kindness, and warmth into the lives of others."
+text:"Today is simply a reminder to celebrate someone wonderful and to appreciate the happiness they bring."
 },
 
 {
 title:"Happy Girlfriend's Day",
-text:"May your heart always know happiness. May your dreams continue to grow. And may you always remember that you are appreciated more than words can ever express. ❤️"
+text:"May your dreams continue to grow, may your smile never fade, and may your days always be filled with joy. ❤️"
 }
 
 ];
 
-const title = document.getElementById("title");
-const story = document.getElementById("story");
-const movie = document.getElementById("movie");
+const title = document.getElementById("sceneTitle");
+const text = document.getElementById("sceneText");
+const story = document.getElementById("storySection");
 
-let index = 0;
+let scene = 0;
 
 function showScene(){
 
-    if(index >= scenes.length){
+    if(scene >= scenes.length){
 
-        movie.style.opacity = 0;
-
-        setTimeout(()=>{
-            document.getElementById("ending").style.opacity = 1;
-        },2000);
+        ending();
 
         return;
+
     }
 
-    movie.style.opacity = 0;
+    story.style.opacity = 0;
 
     setTimeout(()=>{
 
-        title.textContent = scenes[index].title;
-        story.textContent = scenes[index].text;
+        title.textContent = scenes[scene].title;
 
-        movie.style.opacity = 1;
+        typeWriter(scenes[scene].text);
 
-        index++;
+        story.style.opacity = 1;
+
+        scene++;
 
     },1000);
+
+}
+
+function typeWriter(sentence){
+
+    text.innerHTML="";
+
+    let i=0;
+
+    function write(){
+
+        if(i<sentence.length){
+
+            text.innerHTML += sentence.charAt(i);
+
+            i++;
+
+            setTimeout(write,30);
+
+        }
+
+    }
+
+    write();
 
 }
 
@@ -129,116 +132,63 @@ setTimeout(()=>{
     setInterval(showScene,9000);
 
 },10000);
-/* ==============================
-TYPEWRITER
-============================== */
 
-const finalMessage =
 
-`Love is not measured by expensive gifts.
+// ---------- ENDING ----------
 
-It is measured by care.
+function ending(){
 
-By loyalty.
+story.style.opacity=0;
 
-By trust.
+setTimeout(()=>{
 
-By staying.
+const end=document.getElementById("ending");
+
+const endingText=document.getElementById("endingText");
+
+end.style.opacity=1;
+
+endingText.innerHTML=`
+
+Every beautiful story leaves something behind.
+
+Some leave memories.
+
+Some leave smiles.
+
+Some leave hope.
+
+If this short film has made you smile even once...
+
+then it has fulfilled its purpose.
 
 Happy Girlfriend's Day.
 
-May your smile always shine brighter than the stars above.
+May your heart always be surrounded by kindness, laughter, and love.
 
-❤️`;
+❤️
 
-function showTypewriter(){
+`;
 
-const box=document.getElementById("typewriter");
-
-const container=document.getElementById("typewriterContainer");
-
-container.style.opacity=1;
-
-let i=0;
-
-function write(){
-
-if(i<finalMessage.length){
-
-box.innerHTML+=finalMessage.charAt(i);
-
-i++;
-
-setTimeout(write,45);
-
-}
-
-}
-
-write();
-
-}
-
-/* ==============================
-ROSE PETALS
-============================== */
-
-setInterval(()=>{
-
-const rose=document.createElement("div");
-
-rose.className="rose";
-
-rose.innerHTML="🌹";
-
-rose.style.left=Math.random()*100+"vw";
-
-rose.style.animationDuration=(5+Math.random()*4)+"s";
-
-document.body.appendChild(rose);
-
-setTimeout(()=>{
-
-rose.remove();
-
-},9000);
-
-},500);
-
-/* ==============================
-SHOOTING STARS
-============================== */
-
-setInterval(()=>{
-
-const star=document.createElement("div");
-
-star.className="shooting";
-
-document.body.appendChild(star);
-
-setTimeout(()=>{
-
-star.remove();
+setTimeout(startCredits,12000);
 
 },2000);
 
-},12000);
+}
 
-/* ==============================
-ENDING TIMELINE
-============================== */
 
-setTimeout(()=>{
+// ---------- CREDITS ----------
 
-showTypewriter();
+function startCredits(){
 
-},85000);
+document.getElementById("ending").style.opacity=0;
 
-setTimeout(()=>{
+const credits=document.getElementById("credits");
 
-document.getElementById("credits").style.opacity=1;
+credits.style.opacity=1;
 
-document.querySelector(".creditContent").classList.add("creditScroll");
+document
+.getElementById("creditsContent")
+.classList.add("creditScroll");
 
-},105000);
+}
