@@ -490,3 +490,153 @@ transform:translateY(-130%);
 }
 
 }
+/* ======================================================
+   CINEMATIC EFFECTS
+====================================================== */
+
+#effects{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:-2;
+
+}
+
+/* Shooting Stars */
+
+.shooting{
+
+position:absolute;
+
+width:220px;
+
+height:2px;
+
+background:white;
+
+box-shadow:
+
+0 0 20px white,
+
+0 0 40px white;
+
+transform:rotate(-35deg);
+
+animation:shoot 2s linear forwards;
+
+}
+
+@keyframes shoot{
+
+0%{
+
+top:-10%;
+
+left:110%;
+
+opacity:1;
+
+}
+
+100%{
+
+top:110%;
+
+left:-30%;
+
+opacity:0;
+
+}
+
+}
+
+/* Rose Petals */
+
+.petal{
+
+position:absolute;
+
+font-size:26px;
+
+animation:fall linear forwards;
+
+}
+
+@keyframes fall{
+
+0%{
+
+transform:
+
+translateY(-80px)
+
+rotate(0deg);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+
+translateY(110vh)
+
+rotate(720deg);
+
+opacity:0;
+
+}
+
+}
+
+/* Sparkles */
+
+.spark{
+
+position:absolute;
+
+width:4px;
+
+height:4px;
+
+background:white;
+
+border-radius:50%;
+
+animation:spark 5s linear forwards;
+
+}
+
+@keyframes spark{
+
+0%{
+
+opacity:0;
+
+transform:scale(0);
+
+}
+
+30%{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:translateY(-80px);
+
+}
+}
