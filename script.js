@@ -192,3 +192,76 @@ document
 .classList.add("creditScroll");
 
 }
+/* =======================================
+   CINEMATIC EFFECTS
+======================================= */
+
+// Shooting Star
+
+setInterval(()=>{
+
+const star=document.createElement("div");
+
+star.className="shooting";
+
+star.style.top=Math.random()*40+"%";
+
+document.body.appendChild(star);
+
+setTimeout(()=>{
+
+star.remove();
+
+},2200);
+
+},9000);
+
+
+// Rose Petals
+
+setInterval(()=>{
+
+const petal=document.createElement("div");
+
+petal.className="petal";
+
+petal.innerHTML="🌹";
+
+petal.style.left=Math.random()*100+"vw";
+
+petal.style.animationDuration=
+
+(8+Math.random()*5)+"s";
+
+document.body.appendChild(petal);
+
+setTimeout(()=>{
+
+petal.remove();
+
+},13000);
+
+},700);
+
+
+// Sparkles
+
+setInterval(()=>{
+
+const spark=document.createElement("div");
+
+spark.className="spark";
+
+spark.style.left=Math.random()*100+"vw";
+
+spark.style.top=Math.random()*100+"vh";
+
+document.body.appendChild(spark);
+
+setTimeout(()=>{
+
+spark.remove();
+
+},5000);
+
+},300);
